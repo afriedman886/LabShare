@@ -51,4 +51,14 @@ feature 'Users' do
     click_link("Login")
     expect(page).to have_current_path proposals_path
   end
+
+  scenario "a user can logout" do
+    User.create(email:"email@email.edu", fullname: "fullname", password: "password")
+    visit '/'
+    fill_in("email", with: "email@email.edu")
+    fill_in("password", with: "password")
+    click_link("Login")
+    click_link("Log Out")
+    expect(page).to have_current_path new_session_path
+  end
 end
