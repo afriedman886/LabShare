@@ -1,4 +1,8 @@
 class ProposalsController < ApplicationController
+
+  def homeindex
+  end
+
   def index
     @proposals = Proposal.all
   end

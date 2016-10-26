@@ -9,8 +9,8 @@ RSpec.describe "Routing to proposals", :type => :routing do
     expect(:get => "/proposals/new").to route_to("proposals#new")
   end
 
-  it "routes GET /proposals/show to proposals#show" do
-    expect(:get => "/proposals/show").to route_to("proposals#show")
+  it "routes GET /proposals/1 to proposals#show" do
+    expect(:get => "/proposals/1").to route_to("proposals#show")
   end
 
   it "routes POST /proposals to proposals#create" do
