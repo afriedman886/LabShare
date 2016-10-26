@@ -1,6 +1,7 @@
 class ProposalsController < ApplicationController
 
   def homeindex
+    @proposals = Proposal.recent
   end
 
   def index
