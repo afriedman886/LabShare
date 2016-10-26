@@ -29,6 +29,8 @@ class ProposalsController < ApplicationController
     end
   end
 
+
+
   private
   def proposal_params
     params.require(:proposal).permit(:name, :hypothesis, :target_completion_date)
