@@ -1,6 +1,7 @@
 class ProposalsController < ApplicationController
 
   def homeindex
+    @proposals = Proposal.recent
   end
 
   def index
@@ -27,6 +28,9 @@ class ProposalsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def update
   end
 
   private
