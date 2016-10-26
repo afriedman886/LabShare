@@ -4,6 +4,6 @@ Rails.application.routes.draw do
     resources :experiments
   end
 
-  root to: "#index"
+  root to: "application#index"
 
 end
