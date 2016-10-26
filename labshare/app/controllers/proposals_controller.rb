@@ -29,7 +29,8 @@ class ProposalsController < ApplicationController
     end
   end
 
-
+  def update
+  end
 
   private
   def proposal_params
