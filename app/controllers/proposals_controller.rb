@@ -22,11 +22,11 @@ class ProposalsController < ApplicationController
 
   def create
     # switch and test this line once user model/controller is accessible
-    # @proposal = current_user.proposals.new(proposal_params)
-    @proposal = Proposal.new(proposal_params)
+    @proposal = current_user.proposals.new(proposal_params)
+    # @proposal = Proposal.new(proposal_params)
 
     # hard coding user id for testing, switch when user model/controller is accessible
-    @proposal.assign_attributes(proposer_id: 2)
+    # @proposal.assign_attributes(proposer_id: 2)
     if @proposal.save
       redirect_to @proposal, notice: 'Proposal was successfully created.'
     else
