@@ -5,8 +5,6 @@ class CommentsController < ApplicationController
   end
 
   def create
-    p params
-    p comment_params
     if comment_params[:commentable_type] == "Experiment"
       @experiment = Experiment.find_by_id(comment_params[:commentable_id])
       @new_comment = Comment.new(comment_params)

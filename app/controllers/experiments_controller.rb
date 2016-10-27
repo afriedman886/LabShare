@@ -4,7 +4,7 @@ class ExperimentsController < ApplicationController
   def new
     @proposal = Proposal.find_by_id(params[:proposal_id])
     @experiment = Experiment.new
-    if @experiment.proposal.status == 'Closed'
+    if @proposal.status == 'Closed'
       redirect_to proposal_experiment_path(@experiment.proposal, @experiment)
     end
   end
