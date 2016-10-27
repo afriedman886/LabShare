@@ -1,7 +1,8 @@
-class Experiment < ActiveRecord::Base
-  belongs_to :proposal
-  belongs_to :experimenter, class_name: :User, foreign_key: :experimenter_id
+class Comment < ActiveRecord::Base
+  belongs_to :commentable, polymorphic: true
+  belongs_to :commenter, class_name: "User", foreign_key: :commenter_id
 
-  validates_presence_of :experimenter, :proposal
 
+  validates_presence_of :commentable, :content, :commenter
 end
+

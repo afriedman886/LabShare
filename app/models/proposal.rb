@@ -1,6 +1,7 @@
 class Proposal < ActiveRecord::Base
   scope :recent, -> { order("created_at DESC").limit(10) }
 
+  has_many :comments, as: :commentable
   belongs_to :proposer, class_name: :User
   has_many :experiments
 
