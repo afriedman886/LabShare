@@ -15,23 +15,33 @@ class ProposalsController < ApplicationController
 
   def new
     @proposal = Proposal.new
+    if request.xhr?
+      render :"/proposals/_form", layout: false
+    end
   end
 
   def edit
     @proposal = Proposal.find_by_id(params[:id])
+    if current_user != @proposal.proposer || @proposal.status == 'Closed'
+      redirect_to @proposal
+    end
   end
 
   def create
-    # switch and test this line once user model/controller is accessible
     @proposal = current_user.proposals.new(proposal_params)
-    # @proposal = Proposal.new(proposal_params)
 
-    # hard coding user id for testing, switch when user model/controller is accessible
-    # @proposal.assign_attributes(proposer_id: 2)
     if @proposal.save
-      redirect_to @proposal, notice: 'Proposal was successfully created.'
+      if request.xhr?
+        render :"/proposals/_proposal", layout: false, locals: { proposal: @proposal }
+      else
+        redirect_to @proposal, notice: 'Proposal was successfully created.'
+      end
     else
-      render :new
+      if request.xhr?
+        "hi"
+      else
+        render :new
+      end
     end
   end
 
@@ -54,6 +64,6 @@ class ProposalsController < ApplicationController
   end
 
   def proposal_params
-    params.require(:proposal).permit(:name, :hypothesis, :target_completion_date)
+    params.require(:proposal).permit(:name, :hypothesis, :target_completion_date, :status)
   end
 end

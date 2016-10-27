@@ -1,14 +1,7 @@
-<h1> Edit Proposal </h1>
-
-
-<%= form_for @proposal do |f| %>
+<%= form_for @proposal, html: {class: "new-proposal-submit"} do |f| %>
   <p>
     <%= f.label :name, "Proposal Name" %><br>
     <%= f.text_field :name, size: 100 %>
-  </p>
-  <p>
-    <%= f.label :status %><br>
-    <%= f.select(:status, options_for_select([['Open', 'Open'], ['Closed', 'Closed']])) %>
   </p>
   <p>
     <%= f.label :hypothesis %><br>
@@ -22,4 +15,3 @@
     <%= f.submit %>
   </p>
 <% end %>
-
