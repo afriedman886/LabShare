@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+.container {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 1000px;
+  font-family: geneva;
+}

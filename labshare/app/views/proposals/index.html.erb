@@ -1,7 +1,9 @@
+<h1>All Proposals</h1>
+
 <% if @proposals %>
 
   <%= render @proposals %>
 
 <% end %>
 
-<%= link_to "New Proposal", new_proposal_path %>
+<%= button_to "New Proposal", new_proposal_path %>
