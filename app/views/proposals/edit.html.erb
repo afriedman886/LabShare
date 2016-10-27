@@ -7,6 +7,10 @@
     <%= f.text_field :name, size: 100 %>
   </p>
   <p>
+    <%= f.label :status %><br>
+    <%= f.select(:status, options_for_select([['Open', 'Open'], ['Closed', 'Closed']])) %>
+  </p>
+  <p>
     <%= f.label :hypothesis %><br>
     <%= f.text_area :hypothesis, size: "100x10" %>
   </p>
