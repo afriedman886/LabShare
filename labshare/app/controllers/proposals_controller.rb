@@ -10,12 +10,15 @@ class ProposalsController < ApplicationController
     @proposals = Proposal.all
   end
 
+  def show
+    @proposal = Proposal.find_by(id: params[:id])
+  end
+
   def new
     @proposal = Proposal.new
   end
 
-  def show
-    @proposal = Proposal.find_by(id: params[:id])
+  def edit
   end
 
   def create
