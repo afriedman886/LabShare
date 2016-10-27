@@ -32,5 +32,17 @@ describe Experiment do
         experiment = Experiment.create(experiment_details)
         expect(experiment.conclusion).to eq "conclusion"
       end
+
+      it "requires a proposal to be valid" do
+        experiment_details.delete(:proposal_id)
+        experiment = Experiment.new(experiment_details)
+        expect(experiment.valid?).to eq false
+      end
+
+      it "requires an experimenter to be valid" do
+        experiment_details.delete(:experimenter_id)
+        experiment = Experiment.new(experiment_details)
+        expect(experiment.valid?).to eq false
+      end
     end
   end
