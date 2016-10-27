@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Materials do
+describe Material do
 
   describe "creating a material" do
     it 'create a new material with a name' do
