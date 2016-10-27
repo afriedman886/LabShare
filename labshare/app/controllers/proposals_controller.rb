@@ -1,4 +1,6 @@
 class ProposalsController < ApplicationController
+  # before_filter :user_logged_in?
+
 
   def homeindex
     @proposals = Proposal.recent
@@ -34,6 +36,13 @@ class ProposalsController < ApplicationController
   end
 
   private
+  def user_logged_in?
+    if session[:user_id] != nil
+    else
+      redirect_to new_session_path
+    end
+  end
+
   def proposal_params
     params.require(:proposal).permit(:name, :hypothesis, :target_completion_date)
   end
