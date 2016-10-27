@@ -1,5 +1,5 @@
 <h1> <%= @proposal.name %> </h1>
-<p>- <%= @proposal.proposer.fullname %></p>
+<p>Proposed by: <%= @proposal.proposer.fullname %></p>
 
 <% if current_user == @proposal.proposer %>
   <%= link_to "Edit Proposal", edit_proposal_path(@proposal) %>
@@ -10,21 +10,21 @@
   <% if @proposal.target_completion_date %>
     <%= @proposal.target_completion_date.to_formatted_s(:long) %>
     <% else %>
-    Not provided.
+    N/A
     <% end %>
   </p>
-<h3>Hypothesis:</h3>
+<h4>Hypothesis:</h4>
 <p><%= @proposal.hypothesis %></p>
 
-<br><br><h2>Experiments</h2>
+<br><h3>Experiments</h3>
+<%= link_to "Start New Experiment", new_proposal_experiment_path(@proposal) %>
 
 <% if @proposal.experiments.any? %>
   <%= render @proposal.experiments %>
 <% else %>
-  <p>There are no experiments on this proposal yet.</p>
+  <p>There are no experiments for this proposal yet.</p>
 <% end %>
 
-<%= link_to "Start New Experiment", new_proposal_experiment_path(@proposal) %>
 
 
 <h3> Comments </h3>

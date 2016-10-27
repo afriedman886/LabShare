@@ -1,8 +1,9 @@
 
 
-<p>Researcher: <%= @experiment.experimenter_id.fullname %></p>
-<p>Status: <%= @experiment.status %></p>
-<p>Materials: <%= @experiment.materials %></p>
-<p>Procedure: <%= @experiment.procedure %></p>
-
+<p>---------------------</p>
+<p>Researcher: <%= experiment.experimenter.fullname %></p>
+<p>Status: <%= experiment.status %></p>
+<p>Materials: <%= experiment.materials %></p>
+<p>Procedure: <%= experiment.procedure %></p>
+<%= link_to "View Experiment Details", proposal_experiment_path(experiment.proposal, experiment) %>
 

@@ -1,7 +1,7 @@
 class ExperimentsController < ApplicationController
 
   def new
-    @proposal = Proposal.find(params[:proposal_id])
+    @proposal = Proposal.find_by_id(params[:proposal_id])
     @experiment = Experiment.new
   end
 
@@ -14,11 +14,12 @@ class ExperimentsController < ApplicationController
   end
 
   def create
-    proposal = Proposal.find_by_id(params[:proposal_id])
-    @experiment = proposal.experiments.new(experiment_params)
+    @proposal = Proposal.find_by_id(params[:proposal_id])
+    @experiment = @proposal.experiments.new(experiment_params)
+    @experiment.assign_attributes(experimenter_id: current_user.id)
 
     if @experiment.save
-      redirect_to @experiment, notice: 'Experiment was successfully created.'
+      redirect_to proposal_experiment_path(@experiment.proposal, @experiment), notice: 'Experiment was successfully created.'
     else
       render :new
     end

@@ -1,0 +1,25 @@
+
+<h2><%= @experiment.proposal.name %></h2>
+<h5>Experiment by: <%= @experiment.experimenter.fullname %></h5>
+<p>Hypothesis: <%= @experiment.proposal.hypothesis %></p>
+
+<p>Status: <%= @experiment.status %></p>
+<p>Materials: <%= @experiment.materials %></p>
+<p>Procedure: <%= @experiment.procedure %></p>
+<p>Conclusion:
+  <% if @experiment.conclusion %>
+    <%= @experiment.conclusion %>
+  <% else %>
+    Experiment ongoing
+  <% end %>
+</p>
+
+<% if current_user == @experiment.experimenter && @experiment.status != 'Closed' %>
+  <%= link_to "Edit Experiment Details", edit_proposal_experiment_path(@experiment.proposal, @experiment) %>
+<% end %>
+
+
+<h3> Comments </h3>
+
+
+<%= link_to "<< Proposal", proposal_path(@experiment.proposal) %>
