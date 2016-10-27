@@ -28,4 +28,5 @@
 
 
 <h3> Comments </h3>
-
+<%= render @proposal.comments %>
+<%= render partial: '/comments/form' , locals: {commentable_type: "Proposal", commentable_id: @proposal.id } %>

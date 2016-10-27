@@ -20,6 +20,7 @@
 
 
 <h3> Comments </h3>
-
+<%= render @experiment.comments %>
+<%= render partial: '/comments/form' , locals: {commentable_type: "Experiment", commentable_id: @experiment.id } %>
 
 <%= link_to "<< Proposal", proposal_path(@experiment.proposal) %>
