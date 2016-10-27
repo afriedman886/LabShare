@@ -3,6 +3,9 @@ class ExperimentsController < ApplicationController
   def new
     @proposal = Proposal.find_by_id(params[:proposal_id])
     @experiment = Experiment.new
+    if @experiment.proposal.status == 'Closed'
+      redirect_to proposal_experiment_path(@experiment.proposal, @experiment)
+    end
   end
 
   def show
@@ -11,6 +14,9 @@ class ExperimentsController < ApplicationController
 
   def edit
     @experiment = Experiment.find_by_id(params[:id])
+    if current_user != @experiment.experimenter || @experiment.status == 'Closed'
+      redirect_to proposal_experiment_path(@experiment.proposal, @experiment)
+    end
   end
 
   def create

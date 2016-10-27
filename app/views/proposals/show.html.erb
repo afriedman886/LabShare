@@ -1,7 +1,7 @@
 <h1> <%= @proposal.name %> </h1>
 <p>Proposed by: <%= @proposal.proposer.fullname %></p>
 
-<% if current_user == @proposal.proposer %>
+<% if current_user == @proposal.proposer && @proposal.status != 'Closed' %>
   <%= link_to "Edit Proposal", edit_proposal_path(@proposal) %>
 <% end %>
 
@@ -17,7 +17,9 @@
 <p><%= @proposal.hypothesis %></p>
 
 <br><h3>Experiments</h3>
-<%= link_to "Start New Experiment", new_proposal_experiment_path(@proposal) %>
+<% if @proposal.status != 'Closed' %>
+  <%= link_to "Start New Experiment", new_proposal_experiment_path(@proposal) %>
+<% end %>
 
 <% if @proposal.experiments.any? %>
   <%= render @proposal.experiments %>

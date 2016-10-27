@@ -19,6 +19,9 @@ class ProposalsController < ApplicationController
 
   def edit
     @proposal = Proposal.find_by_id(params[:id])
+    if current_user != @proposal.proposer || @proposal.status == 'Closed'
+      redirect_to @proposal
+    end
   end
 
   def create
@@ -54,6 +57,6 @@ class ProposalsController < ApplicationController
   end
 
   def proposal_params
-    params.require(:proposal).permit(:name, :hypothesis, :target_completion_date)
+    params.require(:proposal).permit(:name, :hypothesis, :target_completion_date, :status)
   end
 end
