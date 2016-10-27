@@ -1,4 +1,5 @@
 class ExperimentsController < ApplicationController
+  before_filter :user_logged_in?
 
   def new
     @proposal = Proposal.find_by_id(params[:proposal_id])
@@ -36,6 +37,13 @@ class ExperimentsController < ApplicationController
   private
   def experiment_params
     params.require(:experiment).permit(:procedure, :materials, :status, :conclusion)
+  end
+
+  def user_logged_in?
+    if session[:user_id] != nil
+    else
+      redirect_to new_session_path
+    end
   end
 
 end
