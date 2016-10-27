@@ -36,20 +36,6 @@ ActiveRecord::Schema.define(version: 20161026194035) do
     t.datetime "updated_at",                       null: false
   end
 
-  create_table "material_details", force: :cascade do |t|
-    t.integer  "material_id"
-    t.integer  "experiment_id"
-    t.integer  "quantity",      default: 1
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-  end
-
-  create_table "materials", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "observations", force: :cascade do |t|
     t.integer  "experiment_id", null: false
     t.text     "content",       null: false
