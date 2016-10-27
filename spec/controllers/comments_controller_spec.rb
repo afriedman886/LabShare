@@ -8,20 +8,47 @@ describe CommentsController do
   before(:each) {  User.create(fullname: "fullname", email: "email@email.edu", password: "password")
             session[:user_id] = User.last.id }
 
-  describe "GET #index" do
+  describe "GET #new" do
     it "responds with status code 200" do
-      get :index
+      get :new
       expect(response).to have_http_status 200
     end
 
-    it "assigns the all proposals as @proposals" do
-      get :index
-      expect(assigns(:proposals)).to eq(Proposal.all)
+    it "renders the :index template" do
+      get :new
+      expect(response).to render_template(:new)
+    end
+  end
+
+  describe "Post #create for proposal" do
+    it "responds with status code 200" do
+      post :create, { comment: { commentable_type: "Proposal", commentable_id: proposal.id , content: "content"}}
+      expect(response).to have_http_status 302
     end
 
-    it "renders the :index template" do
-      get :index
-      expect(response).to render_template(:index)
+    it "creates a new proposal in the database" do
+      expect { post :create, { comment: { commentable_type: "Proposal", commentable_id: proposal.id , content: "content"}}}.to change {Comment.all.count}.by(1)
+    end
+
+    it "redirects to the created proposal" do
+      post :create, { comment: { commentable_type: "Proposal", commentable_id: proposal.id , content: "content"}}
+      expect(response).to redirect_to(proposal_path(Proposal.last))
+    end
+  end
+
+  describe "Post #create for experiment" do
+    it "responds with status code 200" do
+      post :create, { comment: { commentable_type: "Experiment", commentable_id: experiment.id , content: "content"}}
+      expect(response).to have_http_status 302
+    end
+
+    it "creates a new experiment in the database" do
+      expect { post :create, { comment: { commentable_type: "Experiment", commentable_id: experiment.id , content: "content"}}}.to change {Comment.all.count}.by(1)
+    end
+
+    it "redirects to the created experiment" do
+      post :create, { comment: { commentable_type: "Experiment", commentable_id: experiment.id , content: "content"}}
+      expect(response).to redirect_to(proposal_experiment_path(Proposal.last,Experiment.last))
     end
   end
 end

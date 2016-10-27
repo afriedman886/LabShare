@@ -5,8 +5,8 @@ class CommentsController < ApplicationController
   end
 
   def create
-    if params[:commentable_type] == "Experiment"
-      @experiment = Experiment.find_by_id(params[:commentable_type])
+    if comment_params[:commentable_type] == "Experiment"
+      @experiment = Experiment.find_by_id(comment_params[:commentable_id])
       @new_comment = Comment.new(comment_params)
       @new_comment.commenter = current_user
       if @new_comment.save
@@ -15,8 +15,8 @@ class CommentsController < ApplicationController
         @errors = @new_comment.errors
         redirect_to 'new'
       end
-    elsif params[:commentable_type] == "Proposal"
-      @proposal = Proposal.find_by_id(params[:commentable_type])
+    elsif comment_params[:commentable_type] == "Proposal"
+      @proposal = Proposal.find_by_id(comment_params[:commentable_id])
       @new_comment = Comment.new(comment_params)
       @new_comment.commenter = current_user
       if @new_comment.save
@@ -25,13 +25,13 @@ class CommentsController < ApplicationController
         @errors = @new_comment.errors
         redirect_to 'new'
       end
+    else
+      redirect_to '/'
     end
-      404
   end
 
   private
   def comment_params
     params.require(:comment).permit(:commentable_type, :commentable_id,  :content)
   end
-
 end

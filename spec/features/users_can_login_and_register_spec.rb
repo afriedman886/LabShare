@@ -6,7 +6,9 @@ feature 'Users' do
     expect(page).to have_current_path new_session_path
     visit '/proposals'
     expect(page).to have_current_path new_session_path
-    visit '/proposals/1/experiments'
+    visit '/proposals/1'
+    expect(page).to have_current_path new_session_path
+    visit '/proposals/1/experiments/1'
     expect(page).to have_current_path new_session_path
     visit '/proposals/new'
     expect(page).to have_current_path new_session_path

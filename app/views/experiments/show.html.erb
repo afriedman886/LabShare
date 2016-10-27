@@ -18,8 +18,17 @@
   <%= link_to "Edit Experiment Details", edit_proposal_experiment_path(@experiment.proposal, @experiment) %>
 <% end %>
 
+<h3> Observations </h3>
+<%= render @experiment.observations %>
+<% if current_user == @experiment.experimenter && @experiment.status != 'Closed' %>
+  <%= render partial: '/observations/form' , locals: {experiment: @experiment } %>
+<% end %>
+
+
+
 
 <h3> Comments </h3>
-
+<%= render @experiment.comments %>
+<%= render partial: '/comments/form' , locals: {commentable_type: "Experiment", commentable_id: @experiment.id } %>
 
 <%= link_to "<< Proposal", proposal_path(@experiment.proposal) %>
