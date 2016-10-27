@@ -18,6 +18,7 @@ class ProposalsController < ApplicationController
   end
 
   def edit
+    @proposal = Proposal.find_by_id(params[:id])
   end
 
   def create
