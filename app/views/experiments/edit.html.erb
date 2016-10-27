@@ -1,0 +1,26 @@
+<h1> Edit Experiment </h1>
+
+
+<%= form_for [@experiment.proposal, @experiment] do |f| %>
+  <p>
+    <%= f.label :status %><br>
+    <%= f.select(:status, options_for_select([['Open', 'Open'], ['Closed', 'Closed']]), { include_blank: true }) %>
+  </p>
+  <p>
+    <%= f.label :materials %><br>
+    <%= f.text_area :materials, size: "100x10" %>
+  </p>
+  <p>
+    <%= f.label :procedure %><br>
+    <%= f.text_area :procedure, size: "100x10" %>
+  </p>
+  <p>
+    <%= f.label :conclusion %><br>
+    <%= f.text_area :conclusion, size: "100x10" %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
