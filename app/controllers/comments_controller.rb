@@ -27,7 +27,6 @@ class CommentsController < ApplicationController
       end
     end
       404
-    end
   end
 
   private
