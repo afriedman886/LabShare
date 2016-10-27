@@ -6,7 +6,13 @@
 <% end %>
 
 <p>Status: <%= @proposal.status %></p>
-<p>Targeted Completion Date: <%= @proposal.target_completion_date.to_formatted_s(:long) %></p>
+<p>Targeted Completion Date:
+  <% if @proposal.target_completion_date %>
+    <%= @proposal.target_completion_date.to_formatted_s(:long) %>
+    <% else %>
+    Not provided.
+    <% end %>
+  </p>
 <h3>Hypothesis:</h3>
 <p><%= @proposal.hypothesis %></p>
 
@@ -21,4 +27,5 @@
 <%= link_to "Start New Experiment", new_proposal_experiment_path(@proposal) %>
 
 
+<h3> Comments </h3>
 

@@ -26,13 +26,14 @@ ActiveRecord::Schema.define(version: 20161026194035) do
   end
 
   create_table "experiments", force: :cascade do |t|
-    t.integer  "experimenter_id", null: false
-    t.integer  "proposal_id",     null: false
-    t.text     "procedures"
+    t.integer  "experimenter_id",                  null: false
+    t.integer  "proposal_id",                      null: false
+    t.text     "procedure"
+    t.text     "materials"
     t.text     "conclusion"
-    t.string   "status"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "status",          default: "Open"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   create_table "material_details", force: :cascade do |t|
