@@ -1,4 +1,13 @@
-<p>
-  <%= link_to proposal.name, proposal %><br>
-  - <%= proposal.proposer.fullname %>
-</p>
+<li class="collection-item avatar">
+  <% if proposal.status != "Open" %>
+    <img src="https://cdn0.iconfinder.com/data/icons/simple-line-1/100/1-37-512.png" alt="" class="circle">
+  <% else %>
+    <img src="https://image.freepik.com/free-icon/chemistry-science-experiment-container-with-liquid-reaction-with-bubbles_318-31247.jpg" alt="" class="circle">
+  <% end %>
+  <span class="title"><%= link_to proposal.name, proposal %></span><br>
+  <p>- <%= proposal.proposer.fullname %></p>
+  <a href="#" class="secondary-content"><i class="material-icons">send</i></a>
+</li>
+
+
+
