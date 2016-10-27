@@ -2,8 +2,9 @@ require 'rails_helper'
 
 describe ProposalsController do
   let!(:proposal) { Proposal.create!(name: "Proposal 1", hypothesis: "It figures stuff out", target_completion_date: Date.new(2016,12,03), proposer_id: 2) }
-  # let(:user) {User.new(fullname: "fullname", email: "email", password: "password")}
-  # before { session[:user_id] = User.last.id}
+  before(:each) {  User.create(fullname: "fullname", email: "email@email.edu", password: "password")
+            session[:user_id] = User.last.id }
+
   describe "GET #index" do
     it "responds with status code 200" do
       get :index

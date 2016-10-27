@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/config/environment.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/config/application.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/config/application.rb": [
         1,
         null,
         1,
@@ -45,12 +45,12 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/config/boot.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/config/environments/test.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/config/environments/test.rb": [
         1,
         null,
         null,
@@ -94,7 +94,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/config/initializers/assets.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -107,7 +107,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/config/initializers/backtrace_silencers.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -116,18 +116,18 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/config/initializers/cookies_serializer.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/config/initializers/cookies_serializer.rb": [
         null,
         null,
         1
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/config/initializers/filter_parameter_logging.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/config/initializers/inflections.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -145,18 +145,18 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/config/initializers/mime_types.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/config/initializers/session_store.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/config/initializers/wrap_parameters.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -172,7 +172,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/config/routes.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/config/routes.rb": [
         1,
         1,
         null,
@@ -185,28 +185,23 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/app/helpers/application_helper.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/app/helpers/application_helper.rb": [
         1,
         1,
-        26,
+        31,
         null,
         null,
         1,
-        6,
+        8,
         null,
         null
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/app/controllers/proposals_controller.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/app/controllers/proposals_controller.rb": [
+        1,
         1,
         null,
-        null,
-        null,
         1,
-        11,
-        null,
-        null,
-        1,
-        5,
+        4,
         null,
         null,
         1,
@@ -218,6 +213,10 @@
         null,
         null,
         1,
+        3,
+        null,
+        null,
+        1,
         null,
         null,
         8,
@@ -236,9 +235,9 @@
         null,
         1,
         1,
-        0,
+        32,
         null,
-        0,
+        11,
         null,
         null,
         null,
@@ -247,14 +246,14 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/app/controllers/application_controller.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/spec/controllers/users_controller_spec.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/spec/controllers/users_controller_spec.rb": [
         1,
         null,
         1,
@@ -319,7 +318,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/app/controllers/users_controller.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/app/controllers/users_controller.rb": [
         1,
         null,
         1,
@@ -346,7 +345,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/spec/features/create_new_proposal_spec.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/spec/features/create_new_proposal_spec.rb": [
         1,
         null,
         1,
@@ -367,19 +366,19 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/spec/features/edit_proposal_spec.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/spec/features/edit_proposal_spec.rb": [
 
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/spec/features/users_can_login_and_register_spec.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/spec/features/users_can_login_and_register_spec.rb": [
         1,
         null,
         1,
         1,
         1,
         1,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
         0,
         0,
         0,
@@ -438,7 +437,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/spec/features/view_all_proposals_spec.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/spec/features/view_all_proposals_spec.rb": [
         1,
         1,
         null,
@@ -446,18 +445,20 @@
         1,
         1,
         1,
-        null,
         1,
-        null,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         null,
         null
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/spec/features/view_one_proposal_spec.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/spec/features/view_one_proposal_spec.rb": [
 
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/spec/models/proposals_spec.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/spec/models/proposals_spec.rb": [
         1,
         1,
         null,
@@ -502,9 +503,9 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/app/models/proposal.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/app/models/proposal.rb": [
         1,
-        13,
+        6,
         null,
         1,
         null,
@@ -512,7 +513,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/spec/models/users_spec.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/spec/models/users_spec.rb": [
         1,
         null,
         1,
@@ -552,7 +553,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/app/models/user.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/app/models/user.rb": [
         1,
         1,
         1,
@@ -566,7 +567,7 @@
         1,
         null,
         1,
-        21,
+        38,
         9,
         null,
         null,
@@ -574,7 +575,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/spec/routing/application_routing_spec.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/spec/routing/application_routing_spec.rb": [
         1,
         null,
         1,
@@ -583,7 +584,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/spec/routing/proposal_routing_spec.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/spec/routing/proposal_routing_spec.rb": [
         1,
         null,
         1,
@@ -609,17 +610,17 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/labshare/LabShare/labshare/app/controllers/sessions_controller.rb": [
+      "/Users/henryfyfe/dbc/devbootcamp/LabShare/labshare/app/controllers/sessions_controller.rb": [
         1,
         null,
         1,
         null,
         null,
         1,
-        2,
-        2,
-        2,
-        2,
+        3,
+        3,
+        3,
+        3,
         null,
         0,
         null,
@@ -637,6 +638,6 @@
         null
       ]
     },
-    "timestamp": 1477582513
+    "timestamp": 1477584213
   }
 }

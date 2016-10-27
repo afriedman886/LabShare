@@ -61,6 +61,6 @@ feature 'Users' do
     fill_in("Password", with: "password")
     click_button("Log In")
     click_link("Log Out")
-    expect(page).to have_current_path root_path
+    expect(page).to have_current_path new_session_path
   end
 end
