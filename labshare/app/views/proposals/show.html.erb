@@ -1,0 +1,19 @@
+<h1> <%= @proposal.name %> </h1>
+<p>- <%= @proposal.proposer.fullname %></p>
+<p>Status: <%= @proposal.status %></p><br>
+<h3>Hypothesis:</h3>
+<p><%= @proposal.hypothesis %></p>
+<p><%= @proposal.target_completion_date %></p>
+
+<h2>Experiments</h2>
+
+<% if @proposal.experiments.any? %>
+  <%= render @proposal.experiments %>
+<% else %>
+  <p>There are no experiments on this proposal yet.</p>
+<% end %>
+
+<%= link_to "Start New Experiment", new_proposal_experiment_path(@proposal) %>
+
+
+

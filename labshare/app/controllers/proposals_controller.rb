@@ -18,6 +18,9 @@ class ProposalsController < ApplicationController
     @proposal = Proposal.new
   end
 
+  def edit
+  end
+
   def create
     # switch and test this line once user model/controller is accessible
     # @proposal = current_user.proposals.new(proposal_params)

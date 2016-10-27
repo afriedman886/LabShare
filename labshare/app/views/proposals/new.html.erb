@@ -1,0 +1,19 @@
+<h1> Create New Proposal </h1>
+
+<%= form_for @proposal do |f| %>
+  <p>
+    <%= f.label :name, "Proposal Name" %><br>
+    <%= f.text_field :name, size: 100 %>
+  </p>
+  <p>
+    <%= f.label :hypothesis %><br>
+    <%= f.text_area :hypothesis, size: "100x10" %>
+  </p>
+  <p>
+    <%= f.label :target_completion_date, "Target Completion Date" %><br>
+    <%= f.date_field :target_completion_date %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

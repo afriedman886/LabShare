@@ -16,4 +16,17 @@ feature "creating a new proposal" do
 
     expect(page).to have_current_path new_proposal_path
   end
+
+  xscenario "the user can submit a form to create a new proposal" do
+    visit '/proposals/new'
+
+    fill_in 'name', with: 'Testing McTesterson'
+    fill_in 'hypothesis', with: 'This will work'
+
+    click_button("Add Proposal")
+
+    expect(page).to have_current_path proposals_path
+
+  end
+
 end
