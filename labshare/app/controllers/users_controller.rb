@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path, notice: "User successfully created."
     else
-      p @user.errors
+      @errors = @user.errors
       render :new
     end
   end
