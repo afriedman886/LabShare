@@ -15,10 +15,36 @@
  */
 @import “materialize”;
 
-.container {
-  border: 1px solid black;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 1400px;
-  font-family: geneva;
+.login-div {
+  margin-top: 100px;
+  background-color: #FAF2FB;
+  padding: 15px;
+  border-radius: 20px;
 }
+
+.center {
+  text-align: center;
+}
+
+.uni-nav {
+  padding-left: 8px;
+  font-size: 120%;
+}
+
+.logo {
+  font-size: 150%;
+}
+
+.nav-accent {
+  height: 20px;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+  .container {
+    flex: 1 0 auto;
+  }

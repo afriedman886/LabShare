@@ -5,37 +5,66 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
 </head>
 <body>
   <header>
-
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
-    </div>
-  </nav>
-
+    <nav class="nav-accent">
+      <div class="nav-wrapper brown lighten-1">
+      </div>
+    </nav>
     <nav>
-      <h2>LabShare</h2>
-      <ul>
-      <li><%= link_to 'Home', root_path %></li>
-      <% if !logged_in? %>
-        <li><%= link_to "Register", new_user_path %></li>
-        <li><%= link_to "Log In", new_session_path %></li>
-      <% else %>
-        <li><%= current_user.fullname %></li>
-        <li><%= link_to "Log Out", session_path(current_user.id), method: :delete %></li>
-      <% end %>
-      </ul>
+      <div class="nav-wrapper pink lighten-3">
+        <a href="/" class="uni-nav">  Washington University Public Health Fund</a>
+        <a href="/" class="brand-logo center logo">LabShare</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if logged_in? %>
+          <li><%= current_user.fullname %></li>
+          <li><%= link_to "Log Out", session_path(current_user.id), method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Register", new_user_path %></li>
+          <li><%= link_to "Log In", new_session_path %></li>
+        <% end %>
+        <li><%= link_to 'Home', root_path %></li>
+        </ul>
+      </div>
     </nav>
   </header>
-<div class="container">
-<%= yield %>
-</div>
+
+  <div class="container main">
+    <%= yield %>
+  </div>
+
+  <footer class="page-footer pink lighten-3">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Washington University Public Health Fund LabShare</h5>
+          <p class="grey-text text-lighten-4">Please post a proposal or build experiments from the proposals and share your results with the rest of WUPHF.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Recent Proposals</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright brown lighten-1">
+      <div class="container brown lighten-1">
+      © 2016 Copyright Text
+      <a class="grey-text text-lighten-4 right" href="#!">Washington University Public Health Fund LabShare</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
