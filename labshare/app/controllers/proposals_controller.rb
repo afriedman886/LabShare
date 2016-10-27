@@ -1,6 +1,5 @@
 class ProposalsController < ApplicationController
-  # before_filter :user_logged_in?
-
+  before_filter :user_logged_in?
 
   def homeindex
     @proposals = Proposal.recent
