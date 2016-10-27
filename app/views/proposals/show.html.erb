@@ -1,11 +1,22 @@
 <h1> <%= @proposal.name %> </h1>
 <p>- <%= @proposal.proposer.fullname %></p>
-<p>Status: <%= @proposal.status %></p><br>
+
+<% if current_user == @proposal.proposer %>
+  <%= link_to "Edit Proposal", edit_proposal_path(@proposal) %>
+<% end %>
+
+<p>Status: <%= @proposal.status %></p>
+<p>Targeted Completion Date:
+  <% if @proposal.target_completion_date %>
+    <%= @proposal.target_completion_date.to_formatted_s(:long) %>
+    <% else %>
+    Not provided.
+    <% end %>
+  </p>
 <h3>Hypothesis:</h3>
 <p><%= @proposal.hypothesis %></p>
-<p><%= @proposal.target_completion_date %></p>
 
-<h2>Experiments</h2>
+<br><br><h2>Experiments</h2>
 
 <% if @proposal.experiments.any? %>
   <%= render @proposal.experiments %>
@@ -16,4 +27,5 @@
 <%= link_to "Start New Experiment", new_proposal_experiment_path(@proposal) %>
 
 
+<h3> Comments </h3>
 
