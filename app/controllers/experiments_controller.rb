@@ -42,7 +42,12 @@ class ExperimentsController < ApplicationController
           redirect_to proposal_experiment_path(@experiment.proposal, @experiment), notice: 'Experiment was successfully created.'
         end
       else
-        render :new
+        if request.xhr?
+          @errors = @experiment.errors.full_messages
+          render :'_errors', layout: false, locals: { errors: @errors }
+        else
+          render :new
+        end
       end
     end
   end

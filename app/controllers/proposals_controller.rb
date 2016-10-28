@@ -38,7 +38,7 @@ class ProposalsController < ApplicationController
       end
     else
       if request.xhr?
-        "hi"
+        render :"_errors", layout: false, locals: { errors: @errors }
       else
         render :new
       end
