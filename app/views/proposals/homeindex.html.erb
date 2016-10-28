@@ -1,6 +1,9 @@
 <h2 class="center page-header">Most Recent Proposals</h2>
 
 <% if @proposals %>
+  <ul class="collection z-depth-2">
+    <%= render @proposals %>
+  </ul>
   <div class="new-proposal">
     <div class="col s12 m7">
       <div class="card horizontal brown lighten-5">
@@ -15,9 +18,6 @@
       </div>
     </div>
   </div>
-  <ul class="collection z-depth-2">
-    <%= render @proposals %>
-  </ul>
 
 <% end %>
 
