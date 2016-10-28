@@ -19,7 +19,7 @@ Registered faculty can create new proposals and/or new experiments, as well as c
 - Greg Garner
 
 ### License
-Labshare is released under the [MIT License](https://opensource.org/licenses/MIT)
+LabShare is released under the [MIT License](https://opensource.org/licenses/MIT)
 
 
 
