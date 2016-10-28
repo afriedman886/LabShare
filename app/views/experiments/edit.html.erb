@@ -16,10 +16,10 @@
   </p>
   <p>
     <%= f.label :conclusion %><br>
-    <%= f.text_area :conclusion, size: "100x10" %>
+    <%= f.text_area :conclusion, size: "100x10",:class=>"conclusion" %>
   </p>
   <p>
-    <%= f.submit %>
+    <%= f.submit "Update Experiment", data: { confirm: "Please Confirm Submission. Adding a conclusion will close the experiment"} %>
   </p>
 <% end %>
 
