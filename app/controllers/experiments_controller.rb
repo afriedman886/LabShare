@@ -57,6 +57,10 @@ class ExperimentsController < ApplicationController
 
     if @experiment.status != "Closed"
       @experiment.update(experiment_params)
+      p@experiment
+      if @experiment.conclusion != nil && @experiment.conclusion != ''
+        @experiment.update_attributes(status: "Closed")
+      end
     end
     redirect_to proposal_experiment_path(@experiment.proposal, @experiment)
   end
