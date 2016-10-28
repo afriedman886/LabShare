@@ -19,9 +19,9 @@
         </p>
     </div>
     <div class="card-action">
-      <%= link_to "Return to Proposal", proposal_path(@experiment.proposal), :class=>" black-text " %>
+      <%= link_to "Return to Proposal", proposal_path(@experiment.proposal), :class=>" black-text  modify-proposal z-depth-2" %>
       <% if current_user == @experiment.experimenter && @experiment.status != 'Closed' %>
-        <%= link_to "Edit Experiment Details", edit_proposal_experiment_path(@experiment.proposal, @experiment), :class=>" black-text "%>
+        <%= link_to "Edit Experiment Details", edit_proposal_experiment_path(@experiment.proposal, @experiment), :class=>" black-text  modify-proposal z-depth-2"%>
       <% end %>
     </div>
   </div>
