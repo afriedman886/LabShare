@@ -1,25 +1,42 @@
+<h3 class="center page-header">Experiment</h3>
 
-<h2><%= @experiment.proposal.name %></h2>
-<h5>Experiment by: <%= @experiment.experimenter.fullname %></h5>
-<p>Hypothesis: <%= @experiment.proposal.hypothesis %></p>
+<div class="col s8 m12">
+  <div class="brown lighten-5 card medium z-depth-2">
+    <div class="card-content">
+      <span class="card-title"><h3><%= @experiment.proposal.name %></h3></span>
+      <h5>Experiment by: <%= @experiment.experimenter.fullname %></h5>
+        <p>Hypothesis: <%= @experiment.proposal.hypothesis %></p>
 
-<p>Status: <%= @experiment.status %></p>
-<p>Materials: <%= @experiment.materials %></p>
-<p>Procedure: <%= @experiment.procedure %></p>
-<p>Conclusion:
-  <% if @experiment.conclusion %>
-    <%= @experiment.conclusion %>
-  <% else %>
-    Experiment ongoing
-  <% end %>
-</p>
+        <p>Status: <%= @experiment.status %></p>
+        <p>Materials: <%= @experiment.materials %></p>
+        <p>Procedure: <%= @experiment.procedure %></p>
+        <p>Conclusion:
+          <% if @experiment.conclusion %>
+            <%= @experiment.conclusion %>
+          <% else %>
+            Experiment ongoing
+          <% end %>
+        </p>
+    </div>
+    <div class="card-action">
+      <%= link_to "Return to Proposal", proposal_path(@experiment.proposal), :class=>"black-text modify-proposal z-depth-2" %>
+      <% if current_user == @experiment.experimenter && @experiment.status != 'Closed' %>
+        <%= link_to "Edit Experiment Details", edit_proposal_experiment_path(@experiment.proposal, @experiment), :class=>"black-text modify-proposal z-depth-2" %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<% if current_user == @experiment.experimenter && @experiment.status != 'Closed' %>
-  <%= link_to "Edit Experiment Details", edit_proposal_experiment_path(@experiment.proposal, @experiment) %>
-<% end %>
+
+
+
 
 <h3> Observations </h3>
-<%= render @experiment.observations %>
+<% if @experiment.observations.any? %>
+  <%= render @experiment.observations %>
+<% else %>
+  <p>There are no observations at this time</p>
+<% end %>
 <% if current_user == @experiment.experimenter && @experiment.status != 'Closed' %>
   <%= render partial: '/observations/form' , locals: {experiment: @experiment } %>
 <% end %>
@@ -31,4 +48,4 @@
 <%= render @experiment.comments %>
 <%= render partial: '/comments/form' , locals: {commentable_type: "Experiment", commentable_id: @experiment.id } %>
 
-<%= link_to "<< Proposal", proposal_path(@experiment.proposal) %>
+

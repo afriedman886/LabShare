@@ -1,9 +1,8 @@
-<<<<<<< HEAD
-
-  <div class="col s8 m12">
-    <div class="brown lighten-5 card medium z-depth-2">
-      <div class="card-content ">
-        <span class="card-title "><h3> <%= @proposal.name.capitalize %></h3></span>
+<h2 class="page-header center">Proposal</h2>
+<div class="col s8 m12">
+  <div class="brown lighten-5 card medium z-depth-2">
+    <div class="card-content ">
+      <span class="card-title "><h3> <%= @proposal.name.capitalize %></h3></span>
         <div class="proposal-details">
           <p>Proposed by: <%= @proposal.proposer.fullname %></p>
           <p>Status: <%= @proposal.status %></p>
@@ -17,7 +16,7 @@
           <h5>Hypothesis:</h5>
             <p><%= @proposal.hypothesis %></p>
       </div>
-      <div class="card-action text-black">
+      <div class="card-action">
         <% if current_user == @proposal.proposer && @proposal.status != 'Closed' %>
           <%= link_to "Edit Proposal", edit_proposal_path(@proposal), :class=>"black-text modify-proposal z-depth-2" %>
         <% end %>
@@ -30,7 +29,7 @@
 </div>
 
 <% if @proposal.experiments.any? %>
-  <br><h3>Experiments</h3>
+  <br><h5>Experiments</h5>
   <table class='striped'>
     <thead>
       <tr>
@@ -50,7 +49,7 @@
 <% end %>
 
 
-<h3> Comments </h3>
+<br><br><h5> Comments </h5>
 <%= render @proposal.comments %>
 <%= render partial: '/comments/form' , locals: {commentable_type: "Proposal", commentable_id: @proposal.id } %>
 

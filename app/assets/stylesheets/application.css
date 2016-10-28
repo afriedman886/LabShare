@@ -65,3 +65,14 @@ body {
   background-color: white;
 }
 
+.right-arrow {
+  float: right;
+}
+
+i.icon-brown {
+ color: #f48fb1 ;
+}
+
+.page-header {
+  font-family: 'Poller One', cursive;
+}
