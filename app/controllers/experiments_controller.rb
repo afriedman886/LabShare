@@ -1,5 +1,5 @@
 class ExperimentsController < ApplicationController
-  before_filter :user_logged_in?, :redirect_cancel, only: [:create, :update]
+  before_filter :user_logged_in?, :redirect_cancel, only: [:create, :update, :show]
 
   def new
     @proposal = Proposal.find_by_id(params[:proposal_id])
