@@ -3,5 +3,5 @@
   <%= f.text_field :content  %><br>
   <!-- Must specify @commentable_type from proposal and experiments -->
   <%= f.hidden_field :experiment_id, value: experiment.id %>
-  <%= f.submit "Submit", :class=>"new-experiment black-text modify-proposal z-depth-2" %><br>
+  <%= f.submit "Submit" %><br>
 <% end %>

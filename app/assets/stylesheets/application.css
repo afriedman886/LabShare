@@ -88,4 +88,18 @@ i.icon-brown {
   padding-bottom: 30px;
 }
 
+.modal-content p {
+  line-height: 130%;
+}
+
+.modal-content h5 {
+  line-height: 110%;
+}
+
+#modal1 {
+  height: 1000px;
+}
+
+
+
 
