@@ -34,6 +34,18 @@
           <li><%= link_to "Log In", new_session_path %></li>
         <% end %>
         <li><%= link_to 'Home', root_path %></li>
+          <li><div>
+            <a class="waves-effect waves-light btn modal-trigger pink lighten-3 z-depth-1" href="#modal1">FAQ</a>
+              <div id="modal1" class="modal modal-fixed-footer brown lighten-5">
+                <div class="modal-content black-text">
+                  <h4 >Frequently Asked Questions...</h4>
+                  <p>A bunch of text</p>
+                </div>
+              <div class="modal-footer">
+                <a href="#!" class=" modal-action modal-close waves-effect pink lighten-3 btn-flat">Done</a>
+              </div>
+            </div>
+          </div></li>
         </ul>
       </div>
     </nav>
@@ -53,8 +65,19 @@
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Links</h5>
           <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Recent Proposals</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
+            <li><a class="grey-text text-lighten-3" href="/">Recent Proposals</a></li>
+            <li><div>
+              <a class="waves-effect waves-light btn modal-trigger pink lighten-3 z-depth-0" href="#modal1">FAQ</a>
+                <div id="modal1" class="modal modal-fixed-footer brown lighten-5">
+                  <div class="modal-content black-text">
+                    <h4 >Frequently Asked Questions...</h4>
+                   <p>A bunch of text</p>
+                  </div>
+                <div class="modal-footer">
+                 <a href="#!" class=" modal-action modal-close waves-effect pink lighten-3 btn-flat">Done</a>
+                </div>
+              </div>
+            </div></li>
           </ul>
         </div>
       </div>

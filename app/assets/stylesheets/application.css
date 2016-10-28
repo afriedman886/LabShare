@@ -76,3 +76,16 @@ i.icon-brown {
 .page-header {
   font-family: 'Poller One', cursive;
 }
+
+
+#create_post {
+    padding: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.login-header {
+  padding-bottom: 30px;
+}
+
+

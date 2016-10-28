@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
         redirect_to proposal_experiment_path(@experiment.proposal, @experiment)
       else
         @errors = @new_comment.errors
-        redirect_to 'new'
+        redirect_to proposal_experiment_path(@experiment.proposal, @experiment)
       end
     elsif comment_params[:commentable_type] == "Proposal"
       @proposal = Proposal.find_by_id(comment_params[:commentable_id])
@@ -23,10 +23,10 @@ class CommentsController < ApplicationController
         redirect_to @proposal
       else
         @errors = @new_comment.errors
-        redirect_to 'new'
+        redirect_to @proposal
       end
     else
-      redirect_to '/'
+      redirect_to root_path
     end
   end
 
