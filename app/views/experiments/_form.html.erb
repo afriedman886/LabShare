@@ -1,0 +1,11 @@
+<%= form_for [@proposal, @proposal.experiments.build], html: {class: "new-experiment-submit"} do |f| %>
+  <p>
+    <%= f.label :procedure %><br>
+    <%= f.text_area :procedure, size: "100x10" %>
+  </p>
+  <p>
+    <%= f.label :materials %><br>
+    <%= f.text_area :materials, size: "100x10" %>
+  </p>
+  <%= f.submit %>
+<% end %>
