@@ -5,12 +5,12 @@
     <div class="card-content">
       <span class="card-title"><h3><%= @experiment.proposal.name %></h3></span>
       <h5>Experiment by: <%= @experiment.experimenter.fullname %></h5>
-        <p>Hypothesis: <%= @experiment.proposal.hypothesis %></p>
+        <p><b>Hypothesis:</b> <%= @experiment.proposal.hypothesis %></p>
 
-        <p>Status: <%= @experiment.status %></p>
-        <p>Materials: <%= @experiment.materials %></p>
-        <p>Procedure: <%= @experiment.procedure %></p>
-        <p>Conclusion:
+        <p><b>Status: </b><%= @experiment.status %></p>
+        <p><b>Materials:</b> <%= @experiment.materials %></p>
+        <p><b>Procedure: </b><%= @experiment.procedure %></p>
+        <p><b>Conclusion:</b>
           <% if @experiment.conclusion %>
             <%= @experiment.conclusion %>
           <% else %>
