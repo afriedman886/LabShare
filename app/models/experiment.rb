@@ -6,4 +6,8 @@ class Experiment < ActiveRecord::Base
 
   validates_presence_of :experimenter, :proposal
 
+  # validates :proposal_open_status
+
+  # def
+
 end
