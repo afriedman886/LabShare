@@ -50,9 +50,10 @@ class ExperimentsController < ApplicationController
   def update
     @experiment = Experiment.find_by_id(params[:id])
 
-    if @experiment.update(experiment_params)
-      redirect_to proposal_experiment_path(@experiment.proposal, @experiment)
+    if @experiment.status != "Closed"
+      @experiment.update(experiment_params)
     end
+    redirect_to proposal_experiment_path(@experiment.proposal, @experiment)
   end
 
   private
