@@ -1,55 +1,56 @@
+
 <h2 class="page-header center">Proposal</h2>
 <div class="col s8 m12">
   <div class="brown lighten-5 card medium z-depth-2">
     <div class="card-content ">
-      <span class="card-title "><h3> <%= @proposal.name.capitalize %></h3></span>
-        <div class="proposal-details">
-          <p>Proposed by: <%= @proposal.proposer.fullname %></p>
-          <p>Status: <%= @proposal.status %></p>
-          <p>Targeted Completion Date:
-            <% if @proposal.target_completion_date %>
-              <%= @proposal.target_completion_date.to_formatted_s(:long) %>
-              <% else %>
-              N/A
-              <% end %>
-          </p>
-          <h5>Hypothesis:</h5>
-            <p><%= @proposal.hypothesis %></p>
+    <span class="card-title "><h3> <%= @proposal.name.capitalize %></h3></span>
+      <div class="proposal-details">
+        <p>Proposed by: <%= @proposal.proposer.fullname %></p>
+        <p>Status: <%= @proposal.status %></p>
+        <p>Targeted Completion Date:
+        <% if @proposal.target_completion_date %>
+          <%= @proposal.target_completion_date.to_formatted_s(:long) %>
+        <% else %>
+          N/A
+        <% end %>
+        </p>
+        <h5>Hypothesis:</h5>
+          <p><%= @proposal.hypothesis %></p>
       </div>
       <div class="card-action">
         <% if current_user == @proposal.proposer && @proposal.status != 'Closed' %>
           <%= link_to "Edit Proposal", edit_proposal_path(@proposal), :class=>"black-text modify-proposal z-depth-2" %>
         <% end %>
         <% if @proposal.status != 'Closed' %>
-          <%= link_to "Start New Experiment", new_proposal_experiment_path(@proposal), :class=>"black-text modify-proposal z-depth-2"%>
+          <%= link_to "Start New Experiment", new_proposal_experiment_path(@proposal), :class=>"new-experiment black-text modify-proposal z-depth-2"%>
         <% end %>
       </div>
     </div>
   </div><br>
 </div>
 
-<% if @proposal.experiments.any? %>
-  <br><h5>Experiments</h5>
-  <table class='striped'>
-    <thead>
-      <tr>
-        <th data-field="id">Researcher</th>
-        <th data-field="name">Status: </th>
-        <th data-field="price">Materials: </th>
-        <th data-field="name">Procedure: </th>
-        <th data-field="price">More Info:</th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render @proposal.experiments %>
-    </tbody>
-  </table>
-<% else %>
-  <p>There are no experiments for this proposal yet.</p>
-<% end %>
-
+<div class="experiment-container">
+  <% if @proposal.experiments.any? %>
+    <br><h3>Experiments</h3>
+    <table class='striped'>
+      <thead>
+        <tr>
+          <th data-field="id">Researcher</th>
+          <th data-field="name">Status: </th>
+          <th data-field="price">Materials: </th>
+          <th data-field="name">Procedure: </th>
+          <th data-field="price">More Info:</th>
+        </tr>
+      </thead>
+      <tbody class="experiment-list">
+        <%= render @proposal.experiments %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>There are no experiments for this proposal yet.</p>
+  <% end %>
+</div>
 
 <br><br><h5> Comments </h5>
 <%= render @proposal.comments %>
 <%= render partial: '/comments/form' , locals: {commentable_type: "Proposal", commentable_id: @proposal.id } %>
-

@@ -1,13 +1,3 @@
 <h2 class="page-header">Add New Experiment</h2>
 
-<%= form_for [@proposal, @proposal.experiments.build] do |f| %>
-  <p>
-    <%= f.label :procedure %><br>
-    <%= f.text_area :procedure, size: "100x10" %>
-  </p>
-  <p>
-    <%= f.label :materials %><br>
-    <%= f.text_area :materials, size: "100x10" %>
-  </p>
-  <%= f.submit %>
-<% end %>
+<%= render 'form', locals: { proposal: @proposal } %>
