@@ -1,6 +1,7 @@
 
 
 
+
 <h4 class="page-header login-header">Register</h4>
-<%= render '/errors' %>
+<%= render partial: '/errors', locals: { object: @user } %>
 <%= render 'form'%>

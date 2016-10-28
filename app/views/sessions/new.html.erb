@@ -1,6 +1,13 @@
 
 <div class="login-div">
   <h4 class="page-header login-header">Login</h4>
+
+  <% if @error %>
+    <ul>
+      <li><%= @error[0] %></li>
+    </ul>
+  <% end %>
+
   <%= form_for "login", url: sessions_path do |f| %>
     <%= f.label :email  %>
     <%= f.email_field :email  %><br>
