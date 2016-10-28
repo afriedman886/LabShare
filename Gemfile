@@ -30,6 +30,8 @@ gem 'rails_12factor'
  #materialize library
  gem 'materialize-sass'
 
+ gem 'faker'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
