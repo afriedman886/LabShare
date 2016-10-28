@@ -1,4 +1,6 @@
-<li class="collection-item avatar">
+
+
+<li class="collection-item avatar brown lighten-5">
   <% if proposal.status != "Open" %>
     <img src="https://cdn0.iconfinder.com/data/icons/simple-line-1/100/1-37-512.png" alt="" class="circle">
   <% else %>
@@ -6,7 +8,9 @@
   <% end %>
   <span class="title"><%= link_to proposal.name, proposal %></span><br>
   <p>- <%= proposal.proposer.fullname %></p>
-  <a href="#" class="secondary-content"><i class="material-icons">send</i></a>
+  <a href="/proposals/<%= proposal.id %>" class="secondary-content brown lighten-5 "><i class="material-icons icon-brown">send</i></a>
+
+
 </li>
 
 

@@ -1,11 +1,26 @@
-<h1 class="center">Most Recent Proposals</h1>
+<h2 class="center page-header">Most Recent Proposals</h2>
 
 <% if @proposals %>
-
-<ul class="collection">
-  <%= render @proposals %>
-</ul>
+  <ul class="collection z-depth-2">
+    <%= render @proposals %>
+  </ul>
+  <div class="new-proposal">
+    <div class="col s12 m7">
+      <div class="card horizontal brown lighten-5">
+        <div class="card-stacked ">
+          <div class="card-content">
+            <p>Help contribute to our scientific database.  Create a proposal or search through the propsoals and conduct an experiment.</p>
+          </div>
+          <div class="card-action">
+            <%= link_to "New Proposal", new_proposal_path, :class=>"black-text modify-proposal z-depth-2"  %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <% end %>
 
-<%= link_to "New Proposal", new_proposal_path %>
+<div class="form-catcher">
+</div>
+

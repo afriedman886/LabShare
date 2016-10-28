@@ -45,6 +45,34 @@ body {
   flex-direction: column;
 }
 
-  .container {
-    flex: 1 0 auto;
-  }
+.container {
+  flex: 1 0 auto;
+}
+
+.main {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.proposal-details {
+  font-size: 110%;
+}
+
+.modify-proposal{
+
+  padding: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.right-arrow {
+  float: right;
+}
+
+i.icon-brown {
+ color: #f48fb1 ;
+}
+
+.page-header {
+  font-family: 'Poller One', cursive;
+}
