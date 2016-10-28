@@ -1,3 +1,5 @@
+
+<h2 class="page-header center">Proposal</h2>
 <div class="col s8 m12">
   <div class="brown lighten-5 card medium z-depth-2">
     <div class="card-content ">
@@ -15,7 +17,7 @@
         <h5>Hypothesis:</h5>
           <p><%= @proposal.hypothesis %></p>
       </div>
-      <div class="card-action text-black">
+      <div class="card-action">
         <% if current_user == @proposal.proposer && @proposal.status != 'Closed' %>
           <%= link_to "Edit Proposal", edit_proposal_path(@proposal), :class=>"black-text modify-proposal z-depth-2" %>
         <% end %>
@@ -49,6 +51,6 @@
   <% end %>
 </div>
 
-<h3> Comments </h3>
+<br><br><h5> Comments </h5>
 <%= render @proposal.comments %>
 <%= render partial: '/comments/form' , locals: {commentable_type: "Proposal", commentable_id: @proposal.id } %>
