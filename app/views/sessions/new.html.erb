@@ -1,4 +1,6 @@
+
 <div class="login-div">
+  <h4 class="page-header login-header">Login</h4>
 
   <% if @error %>
     <ul>
@@ -13,6 +15,6 @@
     <%= f.label :password  %>
     <%= f.password_field :password  %><br>
 
-    <%= f.submit "Log In", :class => 'waves-effect waves-light btn' %>
+    <%= f.submit "Log In" %>
   <% end %>
 </div>
