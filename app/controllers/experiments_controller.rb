@@ -32,24 +32,28 @@ class ExperimentsController < ApplicationController
     @proposal = Proposal.find_by_id(params[:proposal_id])
     @experiment = @proposal.experiments.new(experiment_params)
     @experiment.assign_attributes(experimenter_id: current_user.id)
-
-    if @experiment.save
-      if request.xhr?
-        render :"/experiments/_experiment", layout: false, locals: { experiment: @experiment }
-      else
-        redirect_to proposal_experiment_path(@experiment.proposal, @experiment), notice: 'Experiment was successfully created.'
-      end
+    if @proposal.status == 'Closed'
+      redirect_to proposal_path(@proposal)
     else
-      render :new
+      if @experiment.save
+        if request.xhr?
+          render :"/experiments/_experiment", layout: false, locals: { experiment: @experiment }
+        else
+          redirect_to proposal_experiment_path(@experiment.proposal, @experiment), notice: 'Experiment was successfully created.'
+        end
+      else
+        render :new
+      end
     end
   end
 
   def update
     @experiment = Experiment.find_by_id(params[:id])
 
-    if @experiment.update(experiment_params)
-      redirect_to proposal_experiment_path(@experiment.proposal, @experiment)
+    if @experiment.status != "Closed"
+      @experiment.update(experiment_params)
     end
+    redirect_to proposal_experiment_path(@experiment.proposal, @experiment)
   end
 
   private

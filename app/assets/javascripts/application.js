@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require_tree .
 //= require materialize-sprockets
+
+$(document).ready(function() {
+
+
+  // setTimeout(function showImg(){
+  //     $('div').append('<img src="https://media.giphy.com/media/hFXwY4lER3oBO/giphy.gif">')
+  //   }, 5000);
+
+
+});
