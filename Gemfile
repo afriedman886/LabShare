@@ -29,6 +29,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
  #materialize library
  gem 'materialize-sass'
 
+ gem 'faker'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
