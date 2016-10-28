@@ -13,10 +13,11 @@ Registered faculty can create new proposals and/or new experiments, as well as c
 - Ruby on Rails
 
 ### Developed by Honest Dev
-- Kyle Dorsey
 - Amy Friedman
 - Henry Fyfe
 - Greg Garner
+- [this line is intentionally left blank]
+- Kyle Dorsey
 
 ### License
 LabShare is released under the [MIT License](https://opensource.org/licenses/MIT)
