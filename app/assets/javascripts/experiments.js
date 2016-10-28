@@ -29,4 +29,11 @@ $(document).ready(function() {
       $('.new-experiment').show();
     })
   })
+
+  $('.container').on('click', '.cancel', function(event) {
+    event.preventDefault();
+    $('.new-experiment-submit').remove();
+    $(this).remove();
+    $('.new-experiment').show();
+  })
 });

@@ -30,4 +30,11 @@ $(document).ready(function() {
       }
     })
   })
+
+  $('.container').on('click', '.cancel', function(event) {
+    event.preventDefault();
+    $('.new-proposal-submit').remove();
+    $(this).remove();
+    $('.new-proposal').show();
+  })
 });

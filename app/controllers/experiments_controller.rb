@@ -1,5 +1,5 @@
 class ExperimentsController < ApplicationController
-  before_filter :user_logged_in?
+  before_filter :user_logged_in?, :redirect_cancel, only: [:create, :update, :show]
 
   def new
     @proposal = Proposal.find_by_id(params[:proposal_id])
@@ -42,7 +42,12 @@ class ExperimentsController < ApplicationController
           redirect_to proposal_experiment_path(@experiment.proposal, @experiment), notice: 'Experiment was successfully created.'
         end
       else
-        render :new
+        if request.xhr?
+          @errors = @experiment.errors.full_messages
+          render :'_errors', layout: false, locals: { errors: @errors }
+        else
+          render :new
+        end
       end
     end
   end
@@ -66,6 +71,10 @@ class ExperimentsController < ApplicationController
     else
       redirect_to new_session_path
     end
+  end
+
+  def redirect_cancel
+    redirect_to my_page_path if params[:cancel]
   end
 
 end
